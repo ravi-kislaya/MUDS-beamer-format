@@ -1,0 +1,89 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%Author: Kislaya Ravi
+%Email-id: kislaya.ravi@tum.de
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[usenames,dvipsnames]{beamer}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{changepage}
+\usepackage[utf8]{inputenc}
+\usepackage{blindtext}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[backend=bibtex,style=numeric, defernumbers=true]{biblatex}
+\addbibresource{bibfile.bib}
+
+
+% Declare the image that will be used as the logo
+\pgfdeclareimage[height=0.5cm]{muds}{./figure/logo/muds_logo.jpg}
+
+% Add MUDS logo on top right of every page
+\addtobeamertemplate{frametitle}{}{%
+	\begin{textblock*}{\textwidth}(.82\textwidth,.3cm)
+		\pgfuseimage{muds}
+\end{textblock*}}
+
+\setbeamercolor{frametitle}{fg=MidnightBlue}
+\setbeamercolor{title}{fg=MidnightBlue}
+\setbeamerfont{title}{size=\Huge}
+\setbeamerfont{author}{size=\Large}
+\setbeamerfont{institute}{size=\large}
+\setbeamerfont{date}{size=\large}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
+
+\title{My Presentation} %Name of your awesome presentatiom
+\author{My Name \\ Other Names}
+\institute{My Insitute}
+\date{\today}
+
+\begin{document}
+\input{./title_page}
+
+\begin{frame}
+	\frametitle{Text}
+	\blindtext
+\end{frame}
+
+\begin{frame}
+\frametitle{Enumerated points}
+\begin{itemize}
+	\item First point
+	\begin{enumerate}[-]
+		\item first subpoint
+		\item second subpoint
+	\end{enumerate}
+	\item Second point
+	\item Third point
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Images}
+	\begin{figure}
+		\center
+		\includegraphics[width=\textwidth]{./figure/logo/muds_logo.jpg}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Mathematical Formula}
+	$$F_i = \sum_{j=1}^{N} F_{ij}$$
+\end{frame}
+
+\begin{frame}
+	\frametitle{Citation Eg}
+	Here is Citation \cite{perdikaris2017nonlinear}
+\end{frame}
+
+\begin{frame}[t, allowframebreaks]
+	\frametitle{References}
+\printbibliography
+\end{frame}
+
+\end{document}
